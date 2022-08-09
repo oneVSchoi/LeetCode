@@ -1,14 +1,16 @@
 class Solution {
     func moveZeroes(_ nums: inout [Int]) {
-        let numLength: Int = nums.count
         var index: Int = 0
         
-        for _ in 0..<numLength {
-            if nums[index] == 0 {
-                nums.append(nums.remove(at: index))
-            } else {
+        for i in 0..<nums.count {
+            if nums[i] != 0 {
+                nums[index] = nums[i]
                 index += 1
             }
+        }
+        
+        for i in index..<nums.count {
+            nums[i] = 0
         }
     }
 }
